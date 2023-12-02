@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" type="text/css"/>
+    <script src="js/EmpleadoJS.js" type="text/javascript"></script>
+    <title>Employee Management</title>
+</head>
+
+<body>
+    <center>
+        <header>
+            <img class="imglogo" width="250" height="80" src="img/logo.png">
+            <nav class="navegacion fondonav">
+                <a>Compras</a>
+                <a>Venta</a>
+                <a>Empleado</a>
+                <a>Producto</a>
+                <a>Clientes</a>
+            </nav>
+        </header>
+    </center>
+
+    <div class="contenedor">
+        <div class="izquierdo">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Telefono</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employee-table"></tbody>
+                    </table>
+                </div>
+
+                
+            </div>
+        </div>
+
+        <div class="derecho">
+            <div class="card-body">
+                <br>
+                <div id="detalles-empleado" class="datos table-responsive">
+                </div>
+                
+                <div class="formularios2">
+                    <input type="text" id="busqueda-input" class="form-control" placeholder="Buscar por ID de empleado" style="width: 70%; padding: 12px; box-sizing: border-box; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+                    <input type="submit" class="btn mandar" value="Buscar" onclick="buscarEmpleado();" style="background-color: #0059b3; color: #fff; width: 28%; padding: 12px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease; margin-bottom: 15px;">
+
+                <div class="formularios1">
+                    <h3>Agregar Empleado</h3>
+                    <input type="hidden" id="txtIdPersona">
+                    
+                    <input type="text" id="txtNombre" placeholder="Ingrese el nombre">
+                    <br>
+                    <input type="text" id="txtApellidoP" placeholder="Ingrese el apellido paterno">
+                    <br>
+                    <input type="text" id="txtApellidoM" placeholder="Ingrese el apellido materno">
+                    <br>
+                    
+                    <label for="txtGenero">Género:</label>
+                        <select id="txtGenero" name="genero">
+                          <option value="H">Hombre</option>
+                          <option value="M">Mujer</option>
+                          <option value="O">Otro</option>
+                        </select>
+
+                    <br>
+                    <a>Ingrese fecha de nacimiento:</a>
+                    <input type="date" id="txtFechaNacimiento" placeholder="Seleccione la fecha de nacimiento">
+                    <br>
+                    <input type="text" id="txtRFC" placeholder="Ingrese el RFC">
+                    <br>
+                    <input type="text" id="txtCURP" placeholder="Ingrese el CURP">
+                    <br>
+                    <input type="text" id="txtDomicilio" placeholder="Ingrese el domicilio">
+                    <br>
+                    <input type="text" id="txtCodigoPostal" placeholder="Ingrese el código postal">
+                    <br>
+                    <input type="text" id="txtCiudad" placeholder="Ingrese la ciudad">
+                    <br>
+                    <input type="text" id="txtEstado" placeholder="Ingrese el estado">
+                    <br>
+                    <input type="tel" id="txtTelefono" placeholder="Ingrese el teléfono">
+                    <br>
+                    
+                    <label for="txtFoto">Cargar Foto:</label>
+                        <input type="text" id="txtFoto" accept="image/*" />
+
+                    <br>
+                    <input type="text" id="txtidSucursal" placeholder="Ingrese el ID de la sucursal">
+                    <br>
+                    
+                    <label for="txtRol">Rol:</label>
+                        <select id="txtRol" name="rol">
+                          <option value="ADMC">Administrador del Sistema Central</option>
+                          <option value="ADMS">Administrador de Sucursal</option>
+                          <option value="EMPS">Empleado de Sucursal</option>
+                        </select>
+
+                    <br>
+                    <input type="text" id="txtPuesto" placeholder="Ingrese el puesto">
+                    <br>
+                    <input type="number" id="txtSalarioBruto" placeholder="Ingrese el salario">
+                    <br>
+                    <br>
+                    <button style="background-color: #0059b3; color: #fff; width: 100%; padding: 15px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;"
+                        onclick="insertarEmpleado();">Insertar empleado</button>
+                    <br><br><br>
+                      <button style="background-color: #0059b3; color: #fff; width: 100%; padding: 15px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;"
+                              onclick="actualizarEmpleado()">Editar empleado</button>
+                    
+                    <div id="txtContenido"></div>
+                </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
